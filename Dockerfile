@@ -1,15 +1,7 @@
-FROM jenkins/jenkins:lts-jdk11
+FROM amazoncorretto:17-alpine-jdk
 
-LABEL maintainer="Sample_Docker"
+LABEL maintainer="Harshi_App"
 
-USER root
+COPY target/Harshi123-0.0.1-SNAPSHOT.jar Harshi123-0.0.1-SNAPSHOT.jar
 
-RUN apt-get update && apt-get install -y maven
-
-USER jenkins
-
-ENV MAVEN_HOME=/usr/share/maven
-
-ENV PATH=$MAVEN_HOME/bin:$PATH
-
-EXPOSE 8080
+ENTRYPOINT ["java","-jar","/Harshi123-0.0.1-SNAPSHOT.jar"]

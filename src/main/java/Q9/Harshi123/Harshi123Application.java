@@ -8,6 +8,7 @@ public class Harshi123Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Harshi123Application.class, args);
+		System.out.println("Hello Word");
 	}
 
 }
