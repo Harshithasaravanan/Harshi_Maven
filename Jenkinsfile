@@ -13,7 +13,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    sh 'zsh -c"mvn compile"'
+                    sh 'zsh -c "mvn compile"'
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
@@ -25,7 +25,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    sh 'zsh -c"mvn package"'
+                    sh 'zsh -c "mvn package"'
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
@@ -37,7 +37,7 @@ pipeline {
             steps {
                 script {
                     // Example build step for Maven (if you are using Java)
-                    sh 'zsh -c"mvn test"'
+                    sh 'zsh -c "mvn test"'
 
                     // If you're using Node.js (e.g., npm for front-end projects)
                     //sh 'npm install'
@@ -49,8 +49,8 @@ pipeline {
             steps {
                 script{
 
-                    sh 'zsh -c"docker build -t springboot-harshi4-maven:latest ."'
-                    sh 'zsh -c"docker run -d -p 8090:8090 -p 50090:50090 springboot-harshi4-maven:latest"'
+                    sh 'zsh -c "docker build -t springboot-harshi4-maven:latest ."'
+                    sh 'zsh -c "docker run -d -p 8090:8090 -p 50090:50090 springboot-harshi4-maven:latest"'
                 }
             }
         }
