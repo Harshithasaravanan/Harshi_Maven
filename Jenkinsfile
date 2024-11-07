@@ -44,6 +44,16 @@ pipeline {
                 }
             }
         }
+
+        stage('Build and Deploy Docker Image') {
+            steps {
+                script{
+
+                    sh "docker build -t springboot-harshi4-maven:latest ."
+                    sh "docker run -d -p 8090:8090 -p 50090:50090 springboot-harshi4-maven:latest"
+                }
+            }
+        }
     }
 
     post {
